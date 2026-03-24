@@ -25,7 +25,7 @@ public class AuthGQLClient extends GQLClient
     private final Path secretsPath;
 
 
-    private AuthGQLClient(String endpoint, String username, String password, String tokenURL, Path secretsPath)
+    protected AuthGQLClient(String endpoint, String username, String password, String tokenURL, Path secretsPath)
     {
         super(endpoint);
 

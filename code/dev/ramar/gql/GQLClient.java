@@ -134,41 +134,6 @@ public class GQLClient implements ExecutorCaller
     }
 
 
-    /* API Call Handling
-    --===------------------
-    */
-
-    public <T> T sync(Callable<T> task)
-    {
-        try
-        {
-            return task.call();
-        }
-        catch (Exception ex)
-        {
-            throw new RuntimeException(ex);
-        }
-    }
-
-    public <T> Future<T> async(Callable<T> task)
-    {
-        return executor.submit(task);
-    }
-
-    public <T> T block(Callable<T> task)
-    {
-        try
-        {
-            return executor.submit(task).get();
-        }
-        catch (Exception ex)
-        {
-            throw new RuntimeException(ex);
-        }
-    }
-
-
-
     /* Request Body Building
     --===----------------------
     */
