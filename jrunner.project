@@ -1,3 +1,9 @@
 {
-    "name": "ramar/lib/gql"
+    "name": "ramar/lib/gql",
+    "dependencies": {
+        "disk": [
+            "ramar/lib/utils",
+            "ramar/lib/json"
+        ]
+    }
 }
