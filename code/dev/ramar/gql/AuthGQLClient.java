@@ -42,7 +42,18 @@ public class AuthGQLClient extends GQLClient
 
 
 
-    public static AuthGQLClient FromFile(Path configPath, Path secretsPath)
+    public static AuthGQLClient FromProps(Properties props, Path secretsPath)
+    {
+        String endpoint = props.getProperty("target_url");
+        String username = props.getProperty("username");
+        String password = props.getProperty("password");
+        String tokenURL = props.getProperty("token_url");
+
+        return new AuthGQLClient(endpoint, username, password, tokenURL, secretsPath);
+    }
+
+
+    public static AuthGQLClient FromJSON(Path configPath, Path secretsPath)
     {
         if( configPath == null )
             throw new IllegalArgumentException("configPath is null");
