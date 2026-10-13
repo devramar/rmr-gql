@@ -1,13 +1,18 @@
 package dev.ramar.gql;
 
+import java.io.*;
+
+import java.net.*;
+
+import java.nio.charset.StandardCharsets;
+
+import java.nio.file.*;
+
+import java.util.*;
+
+
 import dev.ramar.json.*;
 import dev.ramar.json.parsers.StringParser;
-
-import java.io.*;
-import java.net.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.*;
-import java.util.*;
 
 /**
  * authenticated GraphQL client with token caching and refresh.

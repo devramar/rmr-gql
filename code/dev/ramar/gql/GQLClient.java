@@ -1,16 +1,21 @@
 package dev.ramar.gql;
 
+import java.io.*;
+
+import java.net.*;
+import java.net.http.*;
+
+import java.nio.charset.StandardCharsets;
+
+import java.util.*;
+import java.util.concurrent.*;
+
+import java.util.function.*;
+
+
 import dev.ramar.json.*;
 
 import dev.ramar.utils.ExecutorCaller;
-
-import java.io.*;
-import java.net.*;
-import java.net.http.*;
-import java.nio.charset.StandardCharsets;
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
 
 public class GQLClient implements ExecutorCaller
 {
