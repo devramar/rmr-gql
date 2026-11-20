@@ -5,8 +5,6 @@ import java.io.*;
 import java.net.*;
 import java.net.http.*;
 
-import java.nio.charset.StandardCharsets;
-
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -111,7 +109,7 @@ public class GQLClient implements ExecutorCaller
 
             JToken token = JToken.JITFromStream(response.body());
             // Optionally attach status to a wrapper (simple version)
-            JObject wrapper = new JObject();
+            JObject wrapper = JObject.Create();
             wrapper.put("status", code);
             wrapper.put("response", token);
 
@@ -145,7 +143,7 @@ public class GQLClient implements ExecutorCaller
 
     public String buildRequestBody(String query, JObject variables)
     {
-        JToken obj = new JObject()
+        JToken obj = JObject.Create()
             .with("query", query)
         ;
 
@@ -164,7 +162,7 @@ public class GQLClient implements ExecutorCaller
 
     public String buildRequestBody(String query)
     {
-        return new JObject()
+        return JObject.Create()
             .with("query", query)
             .toPrettyString()
         ;

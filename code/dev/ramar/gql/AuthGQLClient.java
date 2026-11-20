@@ -175,7 +175,7 @@ public class AuthGQLClient extends GQLClient
     {
         try
         {
-            String payload = new JObject()
+            String payload = JObject.Create()
                 .with("username", this.username)
                 .with("password", this.password)
                 .toString()
@@ -208,7 +208,7 @@ public class AuthGQLClient extends GQLClient
             if( token == null || token.isBlank() || expires <= 0 )
                 throw new RuntimeException("Invalid token response");
 
-            JToken secrets = new JObject()
+            JToken secrets = JObject.Create()
                 .with("token", token)
                 .with("expires_at", expires)
             ;
